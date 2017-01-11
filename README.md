@@ -38,11 +38,10 @@ If you make changes to this file later on you must also run `systemctl daemon-re
 ## Settings
 
 * The web interface is available on port 8112. The password to the interface is `deluge`.
-* The daemon is listening for remote UI connections on port 58846. The username and password is `deluge`.
+* The daemon is listening for remote UI connections on port 58846. If you want to use the GTK UI to connect to the 
+daemon you will have to create an additional user in Deluge. To do this, open `/storage/deluge/config/auth` and add a 
+new line. See the Deluge documentation on how this file works.
 * Port 53160 (both TCP and UDP) is forwarded to the container so you can use port forwarding to become connectable
-
-If you want to use the GTK UI to connect to the daemon you will have to create an additional user in Deluge. To do this, 
-open `/storage/deluge/config/auth` and add a new line. See the Deluge documentation on how this file works.
 
 ### Customizing
 
