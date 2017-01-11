@@ -15,6 +15,7 @@ ExecStart=/storage/.kodi/addons/service.system.docker/bin/docker run \
           --volume=/storage:/storage \
           --volume=/storage/%p/watch:/watch \
           --volume=/storage/%p/config:/config \
+          --volume=/var/media:/var/media \
           --publish=8112:8112 \
           --publish=58846:58846 \
           jalle19/libreelec-%p

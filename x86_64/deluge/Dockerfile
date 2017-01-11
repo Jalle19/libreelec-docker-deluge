@@ -93,7 +93,7 @@ RUN \
 
 ADD config /config.template
 
-VOLUME ["/storage", "/watch", "/config"]
+VOLUME ["/storage", "/watch", "/config", "/var/media"]
 
 ADD ./start.sh /start.sh
 
