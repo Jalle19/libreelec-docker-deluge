@@ -19,10 +19,10 @@ ARCH=$2
 
 case $ARCH in
   x86_64)
-    IMAGE=libreelec/${CONTAINER}
+    IMAGE=jalle19/libreelec-${CONTAINER}
     ;;
   arm)
-    IMAGE=libreelecarm/${CONTAINER}
+    IMAGE=jalle19arm/libreelec-${CONTAINER}
     ;;
 esac
 
