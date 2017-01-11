@@ -1,0 +1,7 @@
+language: generic
+sudo: required
+services:
+  - docker
+  
+install:
+  - ./build.sh deluge x86_64
