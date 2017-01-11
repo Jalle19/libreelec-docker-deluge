@@ -4,7 +4,7 @@
 
 Deluge for LibreELEC using Docker and systemd
 
-### Comparison with other Deluge containers
+### Comparison with other Deluge images
 
 * Doesn't compile some Deluge dependencies from source, resulting in drastically faster build times
 * Same filesystem layout inside the container, meaning you can move a newly downloaded torrent to your library and 
