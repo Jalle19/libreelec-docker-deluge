@@ -18,6 +18,8 @@ ExecStart=/storage/.kodi/addons/service.system.docker/bin/docker run \
           --volume=/var/media:/var/media \
           --publish=8112:8112 \
           --publish=58846:58846 \
+          --publish=53160:53160 \
+          --publish=53160:53160/udp \
           jalle19/libreelec-%p
 ExecStop=/storage/.kodi/addons/service.system.docker/bin/docker stop %p
 
