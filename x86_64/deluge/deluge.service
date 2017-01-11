@@ -17,7 +17,7 @@ ExecStart=/storage/.kodi/addons/service.system.docker/bin/docker run \
           --volume=/storage/%p/config:/config \
           --publish=8112:8112 \
           --publish=58846:58846 \
-          libreelec/%p
+          jalle19/libreelec-%p
 ExecStop=/storage/.kodi/addons/service.system.docker/bin/docker stop %p
 
 [Install]
