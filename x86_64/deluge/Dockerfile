@@ -2,7 +2,7 @@
 # requires docker > 1.8 to build [supports ENV variable]
 
 FROM alpine:3.5
-MAINTAINER docker@libreelec.tv
+MAINTAINER neggelandia@gmail.com
 
 # ARG DELUGE_URL
 ENV DELUGE_URL ${DELUGE_URL:-http://download.deluge-torrent.org/source/deluge-1.3.13.tar.bz2}
