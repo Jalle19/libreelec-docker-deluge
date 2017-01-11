@@ -1,0 +1,24 @@
+[Unit]
+Description=%p container
+Requires=service.system.docker.service
+After=service.system.docker.service
+
+[Service]
+Restart=always
+RestartSec=5s
+TimeoutStartSec=0
+ExecStartPre=/bin/sh -c "mkdir -p /storage/%p/watch /storage/%p/config"
+ExecStart=/storage/.kodi/addons/service.system.docker/bin/docker run \
+          --rm \
+          --name=%p \
+          --hostname=libreelec-%p \
+          --volume=/storage:/storage \
+          --volume=/storage/%p/watch:/watch \
+          --volume=/storage/%p/config:/config \
+          --publish=8112:8112 \
+          --publish=58846:58846 \
+          libreelec/%p
+ExecStop=/storage/.kodi/addons/service.system.docker/bin/docker stop %p
+
+[Install]
+WantedBy=multi-user.target
