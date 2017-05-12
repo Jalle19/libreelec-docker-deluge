@@ -1,7 +1,7 @@
 # requires docker > 1.9 to build [supports ARG variable]
 # requires docker > 1.8 to build [supports ENV variable]
 
-FROM alpine:3.5
+FROM alpine:edge
 MAINTAINER neggelandia@gmail.com
 
 # ARG DELUGE_URL
