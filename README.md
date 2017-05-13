@@ -48,6 +48,10 @@ new line. See the Deluge documentation on how this file works.
 If the setup doesn't suit your needs, just modify whatever you have to and follow the steps from the `Installation` 
 section to rebuild the image and update the service.
 
+## Change log
+
+See [CHANGELOG.md](CHANGELOG.md)
+
 ## License
 
 GNU General Public License 2.0
