@@ -1,9 +1,5 @@
 #!/bin/sh
 
-if [ ! -d /downloads/.state ]; then
-  mkdir -p /downloads/.state
-fi
-
 if [ ! -f "/config/core.conf" ]; then
   cp /config.template/* /config
 fi

@@ -1,5 +1,8 @@
 # Change log
 
+### 1.1.2
+  - fix invalid state handling which could lead to lost torrent state after a reboot
+
 ### 1.1.1
   - actually update version.txt so the Docker container gets tagged correctly
 
