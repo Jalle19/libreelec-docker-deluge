@@ -1,5 +1,8 @@
 # Change log
 
+### 2.0.1
+  - fix "empty continuation line" Docker warnings
+
 ### 2.0.0
   - add support for ARM too, unify the build system to be the same regardless of architecture
   - base the image on alpine:3.8 instead of alpine:edge, fixes recent build failures
