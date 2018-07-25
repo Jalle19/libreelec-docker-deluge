@@ -4,4 +4,4 @@ services:
   - docker
   
 install:
-  - ./build.sh deluge x86_64
+  - ./build.sh
