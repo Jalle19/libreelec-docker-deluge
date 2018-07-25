@@ -24,14 +24,14 @@ continue seeding it. `/var/media` is mounted too so you can use symlinks to your
 * Download this repository as a ZIP file using 
 `wget https://github.com/Jalle19/libreelec-docker-deluge/archive/master.zip -O libreelec-docker-deluge.zip`
 * Unzip the contents using `unzip libreelec-docker-deluge.zip`, then run `cd libreelec-docker-deluge-master`
-* Build the Docker image using `./build.sh deluge x86_64` (this will take about 5-10 minutes on your average Intel 
+* Build the Docker image using `./build.sh` (this will take about 5-10 minutes on your average Intel 
 Celeron)
 * Verify that the image got built by running `docker images | grep jalle19/libreelec-deluge`. You should see one 
 tagged version and one "latest".
 
 ### Enabling the service
 
-* Run `systemctl enable /storage/libreelec-docker-deluge-master/x86_64/deluge/deluge.service` to enable the service. 
+* Run `systemctl enable /storage/libreelec-docker-deluge-master/deluge/deluge.service` to enable the service. 
 If you make changes to this file later on you must also run `systemctl daemon-reload` for the changes to take effect.
 * Reboot or run `systemctl start deluge` to start the service
 

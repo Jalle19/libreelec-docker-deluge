@@ -95,7 +95,7 @@ ADD config /config.template
 
 VOLUME ["/storage", "/watch", "/config", "/var/media"]
 
-ADD ./start.sh /start.sh
+ADD start.sh /start.sh
 
 EXPOSE 53160 53160/udp 8112 58846
 
