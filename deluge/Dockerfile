@@ -10,7 +10,6 @@ ENV DELUGE_URL ${DELUGE_URL:-https://ftp.osuosl.org/pub/deluge/source/deluge-1.3
 RUN \
   # add @testing apk repository (for libtorrent-rasterbar)
   echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
-
 && \
   # install build and runtime dependencies
   apk add --update \
@@ -28,12 +27,10 @@ RUN \
     py-setuptools \
     openssl \
     openssl-dev \
-
 && \
   # install pip as we will use this to install needed python modules
   apk add \
     py2-pip \
-
 && \
   # update pip
   pip install --upgrade pip && \
@@ -47,7 +44,6 @@ RUN \
   pip install --no-cache-dir --upgrade pyOpenSSL && \
   pip install --no-cache-dir --upgrade mako && \
   pip install --no-cache-dir --upgrade pyxdg \
-
 && \
   # download and build deluge
   mkdir /src && \
@@ -56,7 +52,6 @@ RUN \
   cd /src/deluge-* && \
   python setup.py build && \
   python setup.py install --prefix=/usr \
-
 && \
   # cleanup unnecessary files installed during our process
   rm -rf \
@@ -70,13 +65,11 @@ RUN \
     /usr/lib/python*/site-packages/deluge-*-py*.egg/share/pixmaps \
     /usr/lib/python*/site-packages/deluge-*-py*.egg/share/man \
     /usr/lib/python*/site-packages/deluge-*-py*.egg/deluge/ui/gtkui \
-
 && \
   # strip debug symbols from our new libs
   strip -d /usr/lib/*.so.* \
-
 && \
-  # remove the build dependencies and cleanup
+  # remove the build dependencies
   apk del --purge \
     libffi-dev \
     gcc \
@@ -85,11 +78,12 @@ RUN \
     py2-pip \
     python-dev \
     openssl-dev \
-  && \
+  # cleanup
+&& \
   rm -rf \
-    /var/cache/apk/* \
-    /root/.cache \
-    /tmp/*
+  /var/cache/apk/* \
+  /root/.cache \
+  /tmp/*
 
 ADD config /config.template
 
