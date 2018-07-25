@@ -2,6 +2,8 @@
 
 ### 2.0.0
   - add support for ARM too, unify the build system to be the same regardless of architecture
+  - base the image on alpine:3.8 instead of alpine:edge, fixes recent build failures
+  - download the Deluge source code over HTTPS
 
 ### 1.1.2
   - fix invalid state handling which could lead to lost torrent state after a reboot
