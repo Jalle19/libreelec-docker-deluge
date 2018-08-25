@@ -11,10 +11,9 @@ RUN \
   apt-get -y install curl \
 && \
   # download and build deluge
-  mkdir /src && \
-  curl -L $DELUGE_URL | tar -C /src -xjf - \
-  && \
-  cd /src/deluge-* && \
+  cd /usr/src && \
+  curl -L $DELUGE_URL | tar -C /usr/src -xjf - && \
+  cd /usr/src/deluge-* && \
   python setup.py build && \
   python setup.py install \
 && \
@@ -22,7 +21,7 @@ RUN \
   rm -rf \
     /usr/local/bin/deluge \
     /usr/local/bin/deluge-gtk \
-    /src \
+    /usr/src \
     /usr/local/lib/python*/site-packages/deluge-*-py*.egg/share/pixmaps \
     /usr/local/lib/python*/site-packages/deluge-*-py*.egg/share/man \
     /usr/local/lib/python*/site-packages/deluge-*-py*.egg/deluge/ui/gtkui \
