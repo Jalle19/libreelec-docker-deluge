@@ -1,5 +1,8 @@
 # Change log
 
+### 3.0.0
+  - base the image on ubuntu:bionic instead of Alpine Linux which keeps breaking all the time
+
 ### 2.0.1
   - fix "empty continuation line" Docker warnings
 
