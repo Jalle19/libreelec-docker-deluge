@@ -7,8 +7,19 @@ ENV DELUGE_URL ${DELUGE_URL:-https://ftp.osuosl.org/pub/deluge/source/deluge-1.3
 RUN \
   # install build and runtime dependencies
   apt-get -y update && \
-  apt-get -y build-dep deluge && \
-  apt-get -y install curl \
+  apt-get -y install --no-install-recommends curl \
+    python \
+    python-twisted \
+    python-openssl \
+    python-setuptools \
+    gettext \
+    intltool \
+    python-xdg \
+    python-chardet \
+    geoip-database \ 
+    python-geoip \
+    python-libtorrent \
+    python-mako \
 && \
   # download and build deluge
   cd /usr/src && \
