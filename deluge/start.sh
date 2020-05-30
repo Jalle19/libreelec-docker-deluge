@@ -5,4 +5,4 @@ if [ ! -f "/config/core.conf" ]; then
 fi
 
 /usr/local/bin/deluged --config=/config && \
-/usr/local/bin/deluge-web --config=/config -p 8112
+/usr/local/bin/deluge-web -d --config=/config -p 8112
