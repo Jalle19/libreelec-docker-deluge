@@ -1,7 +1,6 @@
 FROM ubuntu:bionic
-MAINTAINER neggelandia@gmail.com
+LABEL MAINTAINER="neggelandia@gmail.com"
 
-# ARG DELUGE_URL
 ENV DELUGE_URL ${DELUGE_URL:-https://ftp.osuosl.org/pub/deluge/source/deluge-1.3.15.tar.bz2}
 
 RUN \
