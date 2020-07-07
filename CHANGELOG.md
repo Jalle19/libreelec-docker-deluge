@@ -1,5 +1,8 @@
 # Change log
 
+### 3.0.1
+  - fix a deprecation notice in the Dockerfile
+
 ### 3.0.0
   - base the image on ubuntu:bionic instead of Alpine Linux which keeps breaking all the time
 
