@@ -5,29 +5,22 @@ ENV DELUGE_URL ${DELUGE_URL:-https://ftp.osuosl.org/pub/deluge/source/2.0/deluge
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN \
-  # install build and runtime dependencies
+  # install build and runtime dependencies (most Python dependencies are 
+  # installed with pip3 by the build script)
   apt-get -y update && \
-  apt-get -y install python3-libtorrent \
-    python3-geoip python3-dbus \
+  apt-get -y install \
+    build-essential \
+    curl \
+    intltool \
+    xz-utils \
+    python3-libtorrent \
+    python3-geoip \
+    python3-dbus \
     python3-gi \
     python3-gi-cairo \
     python3-setuptools \
-    gir1.2-gtk-3.0 \
-    gir1.2-appindicator3 \
-    libnotify4 \
-    librsvg2-common xdg-utils \
     python3-dev \
-    curl \
     python3-pip \
-    python3-markupsafe \
-    intltool \
-    xz-utils \
-    build-essential \
-    libtiff5-dev libjpeg8-dev libopenjp2-7-dev zlib1g-dev \
-    libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python3-tk \
-    libharfbuzz-dev libfribidi-dev libxcb1-dev \ 
-    libffi-dev \
-    libssl-dev \
 && \
   # download and build deluge
   cd /usr/src && \
