@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM ubuntu:20.04
 LABEL MAINTAINER="neggelandia@gmail.com"
 
 ENV DELUGE_URL ${DELUGE_URL:-https://ftp.osuosl.org/pub/deluge/source/2.0/deluge-2.0.3.tar.xz}
