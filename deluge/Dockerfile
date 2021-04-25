@@ -9,18 +9,14 @@ RUN \
   # installed with pip3 by the build script)
   apt-get -y update && \
   apt-get -y install \
-    build-essential \
     curl \
     intltool \
     xz-utils \
     python3-libtorrent \
-    python3-geoip \
-    python3-dbus \
-    python3-gi \
-    python3-gi-cairo \
-    python3-setuptools \
-    python3-dev \
     python3-pip \
+&& \
+  # upgrade pip so cryptography can be properly installed
+  pip3 install --upgrade pip \
 && \
   # download and build deluge
   cd /usr/src && \
@@ -34,11 +30,16 @@ RUN \
     /usr/local/bin/deluge \
     /usr/local/bin/deluge-gtk \
     /usr/src \
-    /usr/local/lib/python*/site-packages/deluge-*-py*.egg/share/pixmaps \
-    /usr/local/lib/python*/site-packages/deluge-*-py*.egg/share/man \
-    /usr/local/lib/python*/site-packages/deluge-*-py*.egg/deluge/ui/gtkui \
+    /usr/local/lib/python*/dist-packages/deluge-*-py*.egg/deluge/ui/data/pixmaps \
+    /usr/local/lib/python*/dist-packages/deluge-*-py*.egg/deluge/ui/gtk3 \
 && \
-  rm -rf \
+  apt-get -y remove python3-dev \
+&& \
+  apt-get -y autoremove \
+&& \
+  apt-get -y clean \
+&& \
+  rm -rf \ 
   /var/lib/apt/lists/* \
   /root/.cache \
   /tmp/*
