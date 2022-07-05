@@ -1,7 +1,7 @@
 FROM ubuntu:bionic
 LABEL MAINTAINER="neggelandia@gmail.com"
 
-ENV DELUGE_URL ${DELUGE_URL:-https://ftp.osuosl.org/pub/deluge/source/deluge-1.3.15.tar.bz2}
+ENV DELUGE_URL ${DELUGE_URL:-https://ftp.osuosl.org/pub/deluge/source/1.3/deluge-1.3.15.tar.bz2}
 
 RUN \
   # install build and runtime dependencies
