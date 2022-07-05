@@ -18,6 +18,9 @@ RUN \
   # upgrade pip so cryptography can be properly installed
   pip3 install --upgrade pip \
 && \
+  # install rjsmin so Deluge can minify its JavaScript bundle during the build process
+  pip3 install rjsmin \
+&& \
   # download and build deluge
   cd /usr/src && \
   curl -L $DELUGE_URL | tar -C /usr/src -xJf - && \
@@ -39,7 +42,7 @@ RUN \
 && \
   apt-get -y clean \
 && \
-  rm -rf \ 
+  rm -rf \
   /var/lib/apt/lists/* \
   /root/.cache \
   /tmp/*
