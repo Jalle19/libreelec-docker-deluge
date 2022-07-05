@@ -1,5 +1,9 @@
 # Change log
 
+### 4.0.0
+  - base the image on ubuntu:20.04
+  - update Deluge to 2.0.5
+
 ### 3.0.1
   - fix a deprecation notice in the Dockerfile
 
