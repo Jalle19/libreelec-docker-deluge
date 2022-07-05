@@ -1,7 +1,0 @@
-language: generic
-sudo: required
-services:
-  - docker
-  
-install:
-  - ./build.sh

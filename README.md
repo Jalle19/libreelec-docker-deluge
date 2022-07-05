@@ -1,6 +1,6 @@
 # libreelec-docker-deluge
 
-[![Build Status](https://travis-ci.org/Jalle19/libreelec-docker-deluge.svg?branch=master)](https://travis-ci.org/Jalle19/libreelec-docker-deluge)
+[![Docker Image CI](https://github.com/Jalle19/libreelec-docker-deluge/actions/workflows/build-docker-image.yml/badge.svg)](https://github.com/Jalle19/libreelec-docker-deluge/actions/workflows/build-docker-image.yml)
 
 Deluge for LibreELEC using Docker and systemd
 
