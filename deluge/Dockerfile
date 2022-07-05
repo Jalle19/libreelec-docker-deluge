@@ -5,14 +5,13 @@ ENV DELUGE_URL ${DELUGE_URL:-https://ftp.osuosl.org/pub/deluge/source/2.0/deluge
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN \
-  # install build and runtime dependencies (most Python dependencies are 
+  # install build and runtime dependencies (Python dependencies are
   # installed with pip3 by the build script)
   apt-get -y update && \
   apt-get -y install \
     curl \
     intltool \
     xz-utils \
-    python3-libtorrent \
     python3-pip \
 && \
   # upgrade pip so cryptography can be properly installed
@@ -20,6 +19,11 @@ RUN \
 && \
   # install rjsmin so Deluge can minify its JavaScript bundle during the build process
   pip3 install rjsmin \
+&& \
+  # install libtorrent and verify the Python bindings work
+  pip3 install libtorrent==1.2.15 \
+&& \
+  python3 -c "import libtorrent; print (libtorrent.version)" \
 && \
   # download and build deluge
   cd /usr/src && \
