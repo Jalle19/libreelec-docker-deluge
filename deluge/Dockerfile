@@ -9,12 +9,13 @@ RUN \
   # install build and runtime dependencies (Python dependencies are
   # installed with pip3 by the build script)
   apt-get -y update && \
-  apt-get -y install \
+  apt-get -y install --no-install-recommends \
     curl \
     intltool \
     xz-utils \
     python3-pip \
-    # Needed to build libtorrent
+    # Needed to build libtorrent \
+    build-essential \
     libboost-tools-dev  \
     libboost-python-dev  \
     libboost-dev  \
@@ -53,8 +54,9 @@ RUN \
     /usr/local/lib/python*/dist-packages/deluge-*-py*.egg/deluge/ui/data/pixmaps \
     /usr/local/lib/python*/dist-packages/deluge-*-py*.egg/deluge/ui/gtk3 \
 && \
-  apt-get -y remove \
+  apt-get -y remove --purge \
     python3-dev \
+    build-essential \
     libboost-tools-dev \
     libboost-python-dev \
     libboost-dev \
