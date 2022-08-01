@@ -1,5 +1,8 @@
 # Change log
 
+### 4.0.1
+  - build libtorrent bindings locally, fixes build on armhf
+
 ### 4.0.0
   - base the image on ubuntu:20.04
   - update Deluge to 2.0.5
